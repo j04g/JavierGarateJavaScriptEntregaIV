@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <title>Economy</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+
+
+
+</head>
+<body onload="actualizarVista()">
+    <div class="container">
+        <header>
+            <h1>Gestor de gastos personales</h1>
+            <div class="contenedor-principal contenido">
+                <div class="row">
+                    <div id="pregunta">
+                        <h2>Coloca tu presupuesto</h2>
+                        <div id="msj_error_pregunta"></div>
+                        <form>
+                            <input type="number" id="presupuestoInicial" class="u-full-width" placeholder="Coloca tu presupuesto"/>
+                            <input type="button" onclick="guardarPresupuesto()" class="button-primary u-full-width" value="Crear Presupuesto" />
+                        </form>
+                    </div>
+                    <div id="divGastos">
+                        <div class="one-half column">
+                            <div id="divCrearGasto">
+                                <form id="formGastos">
+                                    <h2>Aguante argentina</h2>
+                                    <div id="msj_error_creargasto"></div>
+                                    <div class="campo">
+                                        <label>Nombre Gasto</label>
+                                        <input type="text" class="u-full-width" placeholder="Ej. Transporte" id="tipoGasto"/>
+                                    </div>
+                                    <div class="campo">
+                                        <label>Cantidad Gasto</label>
+                                        <input type="number" class="u-full-width" placeholder="Ej. 300" id="cantidadGasto"/>
+                                    </div>
+                                    <input type="button" onclick="agregarGasto()" class="button-primary u-full-width" value="Agregar Gasto" />
+                                </form>
+                                <form>
+                                    
+                                <div class="container">
+                                    <h2>Simulación de Préstamo</h2>
+                                    <form id="simulacionForm">
+                                        <div class="campo">
+                                            <label for="entidadBancaria">Entidad Bancaria:</label>
+                                            <input type="text" id="entidadBancaria" required>
+                                        </div>
+                                        <div class="campo">
+                                            <label for="porcentajeInteres">Porcentaje de Interés:</label>
+                                            <input type="number" id="porcentajeInteres" required>
+                                        </div>
+                                        <div class="campo">
+                                            <label for="numeroCuotas">Número de Cuotas:</label>
+                                            <input type="number" id="numeroCuotas" required>
+                                        </div>
+                                        <div class="campo">
+                                            <label for="monto">Monto del Préstamo:</label>
+                                            <input type="number" id="monto" required>
+                                        </div>
+                                        <div class="campo">
+                                            <button type="button" onclick="simularPrestamo()">Simular</button>
+                                        </div>
+                                        <div id="msj_error_simulacion"></div>
+                                    </form>
+                                </div>
+                                <div class="container" id="resultadoSimulacion"></div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="one-half column">
+                            <div id="divControlGastos"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+
+</body>
+</html>
